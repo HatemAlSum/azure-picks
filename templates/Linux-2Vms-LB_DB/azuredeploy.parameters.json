@@ -5,7 +5,7 @@
         "dns_name": {
             "value": "c9arm"
         },
-        "adminUsername":{
+        "adminUsername": {
             "value": "c9admin"
         },
         "adminPassword": {

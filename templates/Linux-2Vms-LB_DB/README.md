@@ -15,7 +15,7 @@ all port are secured with Network Security Group
 
 How to connect to your VM
 =========================
-Use below script to connect to deployed linux vms
+Use below script to connect to deployed linux vms throw nat rules
 
     hostName=<DNS NAME>
     adminuser=<adminUsername>

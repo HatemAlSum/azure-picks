@@ -12,13 +12,13 @@
         "adminUsername": {
             "type": "string",
             "metadata": {
-                "description": "Admin username on all VMs."
+                "description": "Admin username on all VMs"
             }
         },
         "adminPassword": {
             "type": "securestring",
             "metadata": {
-                "description": "Admin password on all VMs."
+                "description": "Admin password on all VMs"
             }
         },
         "availabilitySet_name": {
