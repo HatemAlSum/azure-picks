@@ -601,6 +601,25 @@
                             "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('webserver1_NIC_name'))]"
                         }
                     ]
+                },
+                "extensionProfile": {
+                    "extensions": [
+                        {
+                            "name": "lapextension",
+                            "properties": {
+                                "publisher": "Microsoft.OSTCExtensions",
+                                "type": "CustomScriptForLinux",
+                                "typeHandlerVersion": "1.4",
+                                "autoUpgradeMinorVersion": true,
+                                "settings": {
+                                    "fileUris": [
+                                        "https://raw.githubusercontent.com/FHatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installserver.sh"
+                                    ],
+                                    "commandToExecute": "bash installserver.sh"
+                                }
+                            }
+                        }
+                    ]
                 }
             },
             "dependsOn": [
@@ -647,6 +666,25 @@
                     "networkInterfaces": [
                         {
                             "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('webserver2_NIC_name'))]"
+                        }
+                    ]
+                },
+                "extensionProfile": {
+                    "extensions": [
+                        {
+                            "name": "lapextension",
+                            "properties": {
+                                "publisher": "Microsoft.OSTCExtensions",
+                                "type": "CustomScriptForLinux",
+                                "typeHandlerVersion": "1.4",
+                                "autoUpgradeMinorVersion": true,
+                                "settings": {
+                                    "fileUris": [
+                                        "https://raw.githubusercontent.com/FHatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installserver.sh"
+                                    ],
+                                    "commandToExecute": "bash installserver.sh"
+                                }
+                            }
                         }
                     ]
                 }
