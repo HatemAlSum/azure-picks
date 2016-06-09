@@ -601,25 +601,6 @@
                             "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('webserver1_NIC_name'))]"
                         }
                     ]
-                },
-                "extensionProfile": {
-                    "extensions": [
-                        {
-                            "name": "lapextension",
-                            "properties": {
-                                "publisher": "Microsoft.OSTCExtensions",
-                                "type": "CustomScriptForLinux",
-                                "typeHandlerVersion": "1.4",
-                                "autoUpgradeMinorVersion": true,
-                                "settings": {
-                                    "fileUris": [
-                                        "https://raw.githubusercontent.com/FHatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installserver.sh"
-                                    ],
-                                    "commandToExecute": "bash installserver.sh"
-                                }
-                            }
-                        }
-                    ]
                 }
             },
             "dependsOn": [
@@ -668,25 +649,6 @@
                             "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('webserver2_NIC_name'))]"
                         }
                     ]
-                },
-                "extensionProfile": {
-                    "extensions": [
-                        {
-                            "name": "lapextension",
-                            "properties": {
-                                "publisher": "Microsoft.OSTCExtensions",
-                                "type": "CustomScriptForLinux",
-                                "typeHandlerVersion": "1.4",
-                                "autoUpgradeMinorVersion": true,
-                                "settings": {
-                                    "fileUris": [
-                                        "https://raw.githubusercontent.com/FHatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installserver.sh"
-                                    ],
-                                    "commandToExecute": "bash installserver.sh"
-                                }
-                            }
-                        }
-                    ]
                 }
             },
             "dependsOn": [
@@ -694,6 +656,48 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccount_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('webserver2_NIC_name'))]"
             ]
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('VM_webserver1_name'),'/installapache')]",
+            "apiVersion": "2015-06-15",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('VM_webserver1_name'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "CustomScriptForLinux",
+                "typeHandlerVersion": "1.5",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/HatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installserver.sh"
+                    ],
+                    "commandToExecute": "bash installserver.sh"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('VM_webserver2_name'),'/installapache')]",
+            "apiVersion": "2015-06-15",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('VM_webserver2_name'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "CustomScriptForLinux",
+                "typeHandlerVersion": "1.5",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/HatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installserver.sh"
+                    ],
+                    "commandToExecute": "bash installserver.sh"
+                }
+            }
         }
     ]
 }
