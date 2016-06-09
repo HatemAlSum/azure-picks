@@ -1,0 +1,7 @@
+{
+  "itemDisplayName": "Deploys 2 Linux VMs under LB,1 VM as Database Node",
+  "description": "This template allows you to deploys 3 Linux VMs , 2  VMs as WebFrontend Node with Load Balancer and 1 VM as Database Node , also Nat rules are configure to access the nodes using ssh and also nat rule for phpmyadmin for db node ",
+  "summary": "This template deploys 2 Linux VMs under load balancer,1 VM as Database Node",
+  "githubUsername": "HatemAlSum",
+  "dateUpdated": "2016-06-09"
+}

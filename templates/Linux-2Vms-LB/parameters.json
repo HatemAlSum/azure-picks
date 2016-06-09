@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "dns_name": {
+            "value": "c9arm"
+        },
+        "VM_dbserver_adminPassword": {
+            "value": "P@$$w0rd"
+        },
+        "VM_webserver_adminPassword": {
+            "value": "P@$$w0rd"
+        },
+        "availabilitySet_name": {
+            "value": "C9-AS"
+        },
+        "VM_dbserver_name": {
+            "value": "C9-DB-Node"
+        },
+        "VM_webserver_name": {
+            "value": "C9-WEB-NODE"
+        },
+        "loadBalancers_name": {
+            "value": "C9-LB"
+        },
+        "dbserver_NIC_name": {
+            "value": "C9-DBNode-NIC"
+        },
+        "webserver_NIC_name": {
+            "value": "C9-WebNode-NIC"
+        },
+        "networkSecurityGroup_name": {
+            "value": "C9-NSG"
+        },
+        "publicIPAddresse_name": {
+            "value": "C9-PIP"
+        },
+        "virtualNetwork_name": {
+            "value": "C9-VNET"
+        },
+        "storageAccount_name": {
+            "value": "c9testsa"
+        }
+    }
+}
