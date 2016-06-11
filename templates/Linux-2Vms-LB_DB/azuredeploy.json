@@ -698,6 +698,31 @@
                     "commandToExecute": "bash installserver.sh"
                 }
             }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('VM_dbserver_name'),'/installphpmyadmin_mysql')]",
+            "apiVersion": "2015-06-15",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('VM_dbserver_name'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "CustomScriptForLinux",
+                "typeHandlerVersion": "1.5",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/HatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installserver.sh",
+                        "https://raw.githubusercontent.com/HatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installdbserver.sh"
+                    ],
+                    "commandToExecute": [
+                        "bash installserver.sh",
+                        "bash installdbserver.sh"
+                    ]
+                }
+            }
         }
     ]
 }
