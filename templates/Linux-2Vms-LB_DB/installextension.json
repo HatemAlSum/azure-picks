@@ -1,0 +1,7 @@
+{
+    "fileUris": [
+        "https://raw.githubusercontent.com/HatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installserver.sh",
+        "https://raw.githubusercontent.com/HatemAlSum/azure-picks/master/templates/Linux-2Vms-LB_DB/installdbserver.sh"
+    ],
+    "commandToExecute": "bash installserver.sh ; bash installdbserver.sh"
+}
