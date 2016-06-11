@@ -86,7 +86,7 @@
         "osType": {
             "publisher": "OpenLogic",
             "offer": "CentOs",
-            "sku": "6.6",
+            "sku": "7.2",
             "version": "latest"
         },
         "imageReference": "[variables('osType')]",
