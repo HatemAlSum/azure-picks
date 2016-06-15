@@ -1,4 +1,7 @@
 #!/bin/bash
+
+exec >>/var/log/provisioner.log 2>&1
+
 # install apache service 
 yum -y update
 yum -y install httpd php php-mysql 
