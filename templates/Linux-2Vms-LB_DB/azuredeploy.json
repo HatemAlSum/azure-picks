@@ -110,7 +110,7 @@
             "location": "[resourceGroup().location]",
             "tags": {},
             "properties": {
-                "accountType": "Standard_LRS"
+                "accountType": "[variables('storageAccountType')]"
             },
             "dependsOn": []
         },
